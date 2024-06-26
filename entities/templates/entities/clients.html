@@ -1,0 +1,60 @@
+{% extends 'entities/index.html' %}
+{% load static %}
+
+{% block title %}
+    <header class="masthead">
+        <div class="container">
+            <div class="masthead-subheading">Shipment Company</div>
+            <div class="masthead-heading text-uppercase">Clients</div>
+        </div>
+    </header>
+{% endblock title %}
+
+
+{% block content %}
+    <table>
+        <thead>
+            <th>Id</th>
+            <th>Client Id</th>
+            <th>Name</th>
+            <th>Segment</th>
+            <th>Email</th>
+        </thead>
+        <tbody>
+        {% for c in clients %}
+            <tr>
+                <td>{{ c.id }}</td>
+                <td>{{ c.client_id }}</td>
+                <td>{{ c.name }}</td>
+                <td>{{ c.segment }}</td>
+                <td>{{ c.email }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    <!-- Clients-->
+    <section class="page-section bg-light" id="clients">
+        <div class="py-5">
+            <div class="container">
+                <div class="text-center">
+                    <h2 class="section-heading text-uppercase">Clients</h2>
+                    <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+                </div>
+                <div class="row align-items-center">
+                    <div class="col-md-3 col-sm-6 my-3">
+                        <a href="#!"><img class="img-fluid img-brand d-block mx-auto" src="{% static 'assets/img/logos/microsoft.svg' %}" alt="..." aria-label="Microsoft Logo" /></a>
+                    </div>
+                    <div class="col-md-3 col-sm-6 my-3">
+                        <a href="#!"><img class="img-fluid img-brand d-block mx-auto" src="{% static 'assets/img/logos/google.svg' %}" alt="..." aria-label="Google Logo" /></a>
+                    </div>
+                    <div class="col-md-3 col-sm-6 my-3">
+                        <a href="#!"><img class="img-fluid img-brand d-block mx-auto" src="{% static 'assets/img/logos/facebook.svg' %}" alt="..." aria-label="Facebook Logo" /></a>
+                    </div>
+                    <div class="col-md-3 col-sm-6 my-3">
+                        <a href="#!"><img class="img-fluid img-brand d-block mx-auto" src="{% static 'assets/img/logos/ibm.svg' %}" alt="..." aria-label="IBM Logo" /></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+{% endblock content %}
