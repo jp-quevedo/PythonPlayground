@@ -17,6 +17,6 @@ class Client(models.Model):
 
 class Product(models.Model):
     product_id = models.IntegerField()
-    name = models.CharField(max_length=15)
+    title = models.CharField(max_length=15)
     category = models.CharField(max_length=15)
     fragile = models.BooleanField()

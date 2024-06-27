@@ -5,7 +5,7 @@
     <div id="layoutSidenav_content">
         <main>
             <div class="container-fluid px-4">
-                <h1 class="mt-4">Clients</h1>
+                <h1 class="mt-4">Shipments</h1>
                 <div class="row">
                     <div class="col-xl-3 col-md-6">
                         <div class="card bg-secondary text-white mb-4">
@@ -57,27 +57,29 @@
                 <div class="card mb-4">
                     <div class="card-header">
                         <i class="fas fa-table me-1"></i>
-                        Clients DataTable
+                        Shipments DataTable
                     </div>
                     <div class="card-body">
                         <table id="datatablesSimple">
                             <thead>
                                 <tr>
                                     <th>Id</th>
-                                    <th>Client Id</th>
-                                    <th>Name</th>
-                                    <th>Segment</th>
-                                    <th>Email</th>
+                                    <th>Shipment Id</th>
+                                    <th>Shipment Mode</th>
+                                    <th>Price</th>
+                                    <th>Date</th>
+                                    <th>Completed</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                {% for c in clients %}
+                                {% for s in shipments %}
                                     <tr>
-                                        <td>{{ c.id }}</td>
-                                        <td>{{ c.client_id }}</td>
-                                        <td>{{ c.name }}</td>
-                                        <td>{{ c.segment }}</td>
-                                        <td>{{ c.email }}</td>
+                                        <td>{{ s.id }}</td>
+                                        <td>{{ s.shipment_id }}</td>
+                                        <td>{{ s.shipment_mode }}</td>
+                                        <td>{{ s.price }}</td>
+                                        <td>{{ s.date }}</td>
+                                        <td>{{ s.completed }}</td>
                                     </tr>
                                     {% endfor %}
                                 </tbody>

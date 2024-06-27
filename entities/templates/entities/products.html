@@ -5,7 +5,7 @@
     <div id="layoutSidenav_content">
         <main>
             <div class="container-fluid px-4">
-                <h1 class="mt-4">Clients</h1>
+                <h1 class="mt-4">Products</h1>
                 <div class="row">
                     <div class="col-xl-3 col-md-6">
                         <div class="card bg-secondary text-white mb-4">
@@ -57,27 +57,27 @@
                 <div class="card mb-4">
                     <div class="card-header">
                         <i class="fas fa-table me-1"></i>
-                        Clients DataTable
+                        Products DataTable
                     </div>
                     <div class="card-body">
                         <table id="datatablesSimple">
                             <thead>
                                 <tr>
                                     <th>Id</th>
-                                    <th>Client Id</th>
-                                    <th>Name</th>
-                                    <th>Segment</th>
-                                    <th>Email</th>
+                                    <th>Product Id</th>
+                                    <th>Title</th>
+                                    <th>Category</th>
+                                    <th>Fragile</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                {% for c in clients %}
+                                {% for p in products %}
                                     <tr>
-                                        <td>{{ c.id }}</td>
-                                        <td>{{ c.client_id }}</td>
-                                        <td>{{ c.name }}</td>
-                                        <td>{{ c.segment }}</td>
-                                        <td>{{ c.email }}</td>
+                                        <td>{{ p.id }}</td>
+                                        <td>{{ p.product_id }}</td>
+                                        <td>{{ p.title }}</td>
+                                        <td>{{ p.category }}</td>
+                                        <td>{{ p.fragile }}</td>
                                     </tr>
                                     {% endfor %}
                                 </tbody>
