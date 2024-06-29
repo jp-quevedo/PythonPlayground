@@ -5,7 +5,7 @@
     <div id="layoutSidenav_content">
         <main>
             <div class="container-fluid px-4">
-                <h1 style="margin-top: 4.5rem">Products</h1>
+                <h1 style="margin-top: 4.5rem">Client Form</h1>
                 <div class="row">
                     <div class="col-xl-3 col-md-6">
                         <div class="card bg-secondary text-white mb-4">
@@ -51,38 +51,11 @@
 
 
 {% block content %}
-    <div id="layoutSidenav_content">
-        <main>
-            <div class="container-fluid px-4">
-                <div class="card mb-4">
-                    <div class="card-header">
-                        <i class="fas fa-table me-1"></i>
-                        Products DataTable
-                    </div>
-                    <div class="card-body">
-                        <table id="datatablesSimple">
-                            <thead>
-                                <tr>
-                                    <th>Id</th>
-                                    <th>Title</th>
-                                    <th>Category</th>
-                                    <th>Fragile</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                {% for p in products %}
-                                    <tr>
-                                        <td>{{ p.id }}</td>
-                                        <td>{{ p.title }}</td>
-                                        <td>{{ p.category }}</td>
-                                        <td>{{ p.fragile }}</td>
-                                    </tr>
-                                    {% endfor %}
-                                </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-        </main>
-    </div>
+    <form action="" method="post" style="margin-left: 1.5rem">
+        {% csrf_token %}
+        <table>
+            {{ form }}
+        </table>
+        <input type="submit" value="Submit">
+    </form>
 {% endblock content %}

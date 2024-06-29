@@ -5,7 +5,7 @@
     <div id="layoutSidenav_content">
         <main>
             <div class="container-fluid px-4">
-                <h1 class="mt-4">Clients</h1>
+                <h1 style="margin-top: 4.5rem">Clients</h1>
                 <div class="row">
                     <div class="col-xl-3 col-md-6">
                         <div class="card bg-secondary text-white mb-4">
@@ -64,7 +64,6 @@
                             <thead>
                                 <tr>
                                     <th>Id</th>
-                                    <th>Client Id</th>
                                     <th>Name</th>
                                     <th>Segment</th>
                                     <th>Email</th>
@@ -74,7 +73,6 @@
                                 {% for c in clients %}
                                     <tr>
                                         <td>{{ c.id }}</td>
-                                        <td>{{ c.client_id }}</td>
                                         <td>{{ c.name }}</td>
                                         <td>{{ c.segment }}</td>
                                         <td>{{ c.email }}</td>
