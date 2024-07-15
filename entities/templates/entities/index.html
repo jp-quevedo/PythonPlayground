@@ -17,6 +17,7 @@
             <!-- Navbar Brand-->
             <a class="navbar-brand ps-3" href="{% url 'home' %}">Shipment Company</a>
             <!-- Navbar Search-->
+            {% if user.is_authenticated %}
             <form class="d-none d-md-inline-block form-inline ms-auto me-0 me-md-3 my-2 my-md-0">
                 <div class="input-group">
                     <input class="form-control" type="text" placeholder="Search for..." aria-label="Search for..." aria-describedby="btnNavbarSearch" />
@@ -24,6 +25,7 @@
                 </div>
             </form>
             <!-- Navbar-->
+            <div class="text-muted">[{{ user.username }}]</div>
             <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
@@ -31,57 +33,74 @@
                         <li><a class="dropdown-item" href="#!">Settings</a></li>
                         <li><a class="dropdown-item" href="#!">Activity Log</a></li>
                         <li><hr class="dropdown-divider" /></li>
-                        <li><a class="dropdown-item" href="#!">Logout</a></li>
+                        <li>
+                            <form method="post" action="{% url 'logout' %}">
+                                {% csrf_token %}
+                                <button type="submit" class="dropdown-item">Log Out</button>
+                            </form>
+                        </li>
                     </ul>
                 </li>
             </ul>
+            {% else %}
+            <div class="mb-4" style="margin-top: 1.5rem" >
+                <button class="btn btn-secondary" id="btnNavbarSearch" type="button">
+                    <a class="dropdown-item" href="{% url 'login' %}">Login</a>
+                </button>
+                <button class="btn btn-secondary" id="btnNavbarSearch" type="button">
+                    <a class="dropdown-item" href="{% url 'signup' %}">Signup</a>
+                </button>
+            </div>
+            {% endif %}
         </nav>
         {% block title %}
-        <div id="layoutSidenav_content">
-            <main>
-                <div class="container-fluid px-4">
-                    <h1 style="margin-top: 4.5rem">Dashboard</h1>
-                    <div class="row">
-                        <div class="col-xl-3 col-md-6">
-                            <div class="card bg-secondary text-white mb-4">
-                                <div class="card-body">Clients</div>
-                                <div class="card-footer d-flex align-items-center justify-content-between">
-                                    <a class="small text-white stretched-link" href="{% url 'clients' %}">View Details</a>
-                                    <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+        {% if user.is_authenticated %}
+            <div id="layoutSidenav_content">
+                <main>
+                    <div class="container-fluid px-4">
+                        <h1 style="margin-top: 4.5rem">Dashboard</h1>
+                        <div class="row">
+                            <div class="col-xl-3 col-md-6">
+                                <div class="card bg-secondary text-white mb-4">
+                                    <div class="card-body">Clients</div>
+                                    <div class="card-footer d-flex align-items-center justify-content-between">
+                                        <a class="small text-white stretched-link" href="{% url 'clients' %}">View Details</a>
+                                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-xl-3 col-md-6">
-                            <div class="card bg-secondary text-white mb-4">
-                                <div class="card-body">Products</div>
-                                <div class="card-footer d-flex align-items-center justify-content-between">
-                                    <a class="small text-white stretched-link" href="{% url 'products' %}">View Details</a>
-                                    <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                            <div class="col-xl-3 col-md-6">
+                                <div class="card bg-secondary text-white mb-4">
+                                    <div class="card-body">Products</div>
+                                    <div class="card-footer d-flex align-items-center justify-content-between">
+                                        <a class="small text-white stretched-link" href="{% url 'products' %}">View Details</a>
+                                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-xl-3 col-md-6">
-                            <div class="card bg-secondary text-white mb-4">
-                                <div class="card-body">Shipments</div>
-                                <div class="card-footer d-flex align-items-center justify-content-between">
-                                    <a class="small text-white stretched-link" href="{% url 'shipments' %}">View Details</a>
-                                    <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                            <div class="col-xl-3 col-md-6">
+                                <div class="card bg-secondary text-white mb-4">
+                                    <div class="card-body">Shipments</div>
+                                    <div class="card-footer d-flex align-items-center justify-content-between">
+                                        <a class="small text-white stretched-link" href="{% url 'shipments' %}">View Details</a>
+                                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="col-xl-3 col-md-6">
-                            <div class="card bg-secondary text-white mb-4">
-                                <div class="card-body">Customer Service</div>
-                                <div class="card-footer d-flex align-items-center justify-content-between">
-                                    <a class="small text-white stretched-link" href="#">View Details</a>
-                                    <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                            <div class="col-xl-3 col-md-6">
+                                <div class="card bg-secondary text-white mb-4">
+                                    <div class="card-body">Customer Service</div>
+                                    <div class="card-footer d-flex align-items-center justify-content-between">
+                                        <a class="small text-white stretched-link" href="#">View Details</a>
+                                        <div class="small text-white"><i class="fas fa-angle-right"></i></div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </main>
-        </div>
+                </main>
+            </div>
+        {% endif %}
         {% endblock title %}
         
         {% block content %}

@@ -68,21 +68,21 @@
                         <table id="datatablesSimple">
                             <thead>
                                 <tr>
-                                    <th>Id</th>
-                                    <th>Name</th>
-                                    <th>Segment</th>
-                                    <th>Email</th>
-                                    <th>Actions</th>
+                                    <th style="padding-right: 2rem">Id</th>
+                                    <th style="padding-right: 2rem">Name</th>
+                                    <th style="padding-right: 2rem">Segment</th>
+                                    <th style="padding-right: 2rem">Email</th>
+                                    <th style="padding-right: 2rem">Actions</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 {% for c in clients %}
                                     <tr>
-                                        <td>{{ c.id }}</td>
-                                        <td>{{ c.name }}</td>
-                                        <td>{{ c.segment }}</td>
-                                        <td>{{ c.email }}</td>
-                                        <td>
+                                        <td style="padding-right: 2rem">{{ c.id }}</td>
+                                        <td style="padding-right: 2rem">{{ c.name }}</td>
+                                        <td style="padding-right: 2rem">{{ c.segment }}</td>
+                                        <td style="padding-right: 2rem">{{ c.email }}</td>
+                                        <td style="padding-right: 2rem">
                                             <button class="btn btn-secondary" id="btnNavbarSearch" type="button" class="fas fa-edit">
                                                 <a class="dropdown-item" href="{% url 'clientUpdate' c.id %}">Edit</a>
                                             </button>

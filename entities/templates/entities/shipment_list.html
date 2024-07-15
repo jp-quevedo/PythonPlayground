@@ -68,23 +68,23 @@
                         <table id="datatablesSimple">
                             <thead>
                                 <tr>
-                                    <th>Id</th>
-                                    <th>Shipment Mode</th>
-                                    <th>Price</th>
-                                    <th>Date</th>
-                                    <th>Completed</th>
-                                    <th>Actions</th>
+                                    <th style="padding-right: 2rem">Id</th>
+                                    <th style="padding-right: 2rem">Shipment Mode</th>
+                                    <th style="padding-right: 2rem">Price</th>
+                                    <th style="padding-right: 2rem">Date</th>
+                                    <th style="padding-right: 2rem">Completed</th>
+                                    <th style="padding-right: 2rem">Actions</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 {% for s in shipment_list %}
                                     <tr>
-                                        <td>{{ s.id }}</td>
-                                        <td>{{ s.shipment_mode }}</td>
-                                        <td>{{ s.price }}</td>
-                                        <td>{{ s.date }}</td>
-                                        <td>{{ s.completed }}</td>
-                                        <td>
+                                        <td style="padding-right: 2rem">{{ s.id }}</td>
+                                        <td style="padding-right: 2rem">{{ s.shipment_mode }}</td>
+                                        <td style="padding-right: 2rem">{{ s.price }}</td>
+                                        <td style="padding-right: 2rem">{{ s.date }}</td>
+                                        <td style="padding-right: 2rem">{{ s.completed }}</td>
+                                        <td style="padding-right: 2rem">
                                             <button class="btn btn-secondary" id="btnNavbarSearch" type="button" class="fas fa-edit">
                                                 <a class="dropdown-item" href="{% url 'updateShipment' s.id %}">Edit</a>
                                             </button>

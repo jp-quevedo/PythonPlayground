@@ -1,3 +1,4 @@
+from django.contrib.auth.views import LogoutView
 from django.urls import path
 
 from .views import *
@@ -25,12 +26,18 @@ urlpatterns = [
     path('product_update/<product_id>/', productUpdate, name='productUpdate'),
     path('product_delete/<product_id>/', productDelete, name='productDelete'),
 
-    #Shipments
+    # Shipments
 
     # path('shipments', shipments, name='shipments'),
     path('shipments', ShipmentList.as_view(), name='shipments'),
     path('shipment_create', CreateShipment.as_view(), name='createShipment'),
     path('shipment_update/<int:pk>/', UpdateShipment.as_view(), name='updateShipment'),
     path('shipment_delete/<int:pk>/', DeleteShipment.as_view(), name='deleteShipment'),
+
+    # Login - Logout - Signup
+
+    path('login', loginRequest, name='login'),
+    path('logout', LogoutView.as_view(template_name='entities/logout.html'), name='logout'),
+    path('signup', signupRequest, name='signup'),
 
 ]
