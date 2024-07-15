@@ -1,5 +1,4 @@
 from django import forms
-from datetime import datetime
 
 class ClientForm(forms.Form):
     name = forms.CharField(max_length=15, required=True)

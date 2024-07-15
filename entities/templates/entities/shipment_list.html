@@ -5,7 +5,7 @@
     <div id="layoutSidenav_content">
         <main>
             <div class="container-fluid px-4">
-                <h1 style="margin-top: 4.5rem">Products</h1>
+                <h1 style="margin-top: 4.5rem">Shipments</h1>
                 <div class="row">
                     <div class="col-xl-3 col-md-6">
                         <div class="card bg-secondary text-white mb-4">
@@ -56,38 +56,40 @@
             <div class="container-fluid px-4">
                 <div class="mb-4">
                     <button class="btn btn-secondary" id="btnNavbarSearch" type="button">
-                        <a class="dropdown-item" href="{% url 'productForm' %}">Create</a>
+                        <a class="dropdown-item" href="{% url 'createShipment' %}">Create</a>
                     </button>
                 </div>
                 <div class="card mb-4">
                     <div class="card-header">
                         <i class="fas fa-table me-1"></i>
-                        Products DataTable
+                        Shipments DataTable
                     </div>
                     <div class="card-body">
                         <table id="datatablesSimple">
                             <thead>
                                 <tr>
                                     <th>Id</th>
-                                    <th>Title</th>
-                                    <th>Category</th>
-                                    <th>Fragile</th>
+                                    <th>Shipment Mode</th>
+                                    <th>Price</th>
+                                    <th>Date</th>
+                                    <th>Completed</th>
                                     <th>Actions</th>
                                 </tr>
                             </thead>
                             <tbody>
-                                {% for p in products %}
+                                {% for s in shipment_list %}
                                     <tr>
-                                        <td>{{ p.id }}</td>
-                                        <td>{{ p.title }}</td>
-                                        <td>{{ p.category }}</td>
-                                        <td>{{ p.fragile }}</td>
+                                        <td>{{ s.id }}</td>
+                                        <td>{{ s.shipment_mode }}</td>
+                                        <td>{{ s.price }}</td>
+                                        <td>{{ s.date }}</td>
+                                        <td>{{ s.completed }}</td>
                                         <td>
                                             <button class="btn btn-secondary" id="btnNavbarSearch" type="button" class="fas fa-edit">
-                                                <a class="dropdown-item" href="{% url 'productUpdate' p.id %}">Edit</a>
+                                                <a class="dropdown-item" href="{% url 'updateShipment' s.id %}">Edit</a>
                                             </button>
                                             <button class="btn btn-secondary" id="btnNavbarSearch" type="button" class="fas fa-trash">
-                                                <a class="dropdown-item" href="{% url 'productDelete' p.id %}">Delete</a>
+                                                <a class="dropdown-item" href="{% url 'deleteShipment' s.id %}">Delete</a>
                                             </button>
                                         </td>
                                     </tr>

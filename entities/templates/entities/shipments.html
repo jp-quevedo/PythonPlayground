@@ -68,6 +68,7 @@
                                     <th>Price</th>
                                     <th>Date</th>
                                     <th>Completed</th>
+                                    <th>Actions</th>
                                 </tr>
                             </thead>
                             <tbody>
@@ -78,6 +79,14 @@
                                         <td>{{ s.price }}</td>
                                         <td>{{ s.date }}</td>
                                         <td>{{ s.completed }}</td>
+                                        <td>
+                                            <button class="btn btn-secondary" id="btnNavbarSearch" type="button" class="fas fa-edit">
+                                                <a class="dropdown-item" href="#!">Edit</a>
+                                            </button>
+                                            <button class="btn btn-secondary" id="btnNavbarSearch" type="button" class="fas fa-trash">
+                                                <a class="dropdown-item" href="#!">Delete</a>
+                                            </button>
+                                        </td>
                                     </tr>
                                     {% endfor %}
                                 </tbody>
