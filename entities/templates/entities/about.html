@@ -1,0 +1,23 @@
+{% extends 'entities/index.html' %}
+{% load static %}
+
+{% block title %}
+    <div id="layoutSidenav_content">
+        <main>
+            <div class="container-fluid px-4">
+                <h1 style="margin-top: 4.5rem">About me</h1>
+            </div>
+        </main>
+    </div>
+{% endblock title %}
+
+
+{% block content %}
+    <div class="container-fluid px-4">
+        <p>Hello, thank you for trying out my playground!</p>
+        <p>My name is Juan Pablo Quevedo Álvarez and I developed this project purely based in Django freamework.</p>
+        <p>My main objective here is to put Django's functionalities to the test and develope a useful application with clean code.</p>
+        <p>Throught your navigation you will be able to register an account, log into it, edit it's information, update your profile, and complete crud operations over every model.</p>
+        <p>You may find related projects in my website: https://www.jpquevedo.dev/</p>
+    </div>
+{% endblock content %}

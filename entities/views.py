@@ -20,6 +20,9 @@ def home(request):
 def index(request):
     return render(request, 'entities/index.html')
 
+def about(request):
+    return render(request, 'entities/about.html')
+
 # Clients
 
 @login_required
