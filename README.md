@@ -1,3 +1,5 @@
+# Python Playground: A Shipments Company mock
+
 #### Hello, thank you for trying out my playground!
 This project is purely based in Django freamework.
 
