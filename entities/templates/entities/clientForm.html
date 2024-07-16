@@ -51,11 +51,13 @@
 
 
 {% block content %}
-    <form action="" method="post" style="margin-left: 1.5rem">
-        {% csrf_token %}
-        <table>
-            {{ form }}
-        </table>
-        <input type="submit" value="Submit">
-    </form>
+    <div class="mb-4">
+        <form action="" method="post" style="margin-left: 1.5rem">
+            {% csrf_token %}
+            <table>
+                {{ form }}
+            </table>
+            <input type="submit" value="Submit">
+        </form>
+    </div>
 {% endblock content %}

@@ -1,0 +1,25 @@
+{% extends 'entities/index.html' %}
+{% load static %}
+
+{% block title %}
+    <div id="layoutSidenav_content">
+        <main>
+            <div class="container-fluid px-4">
+                <h1 style="margin-top: 4.5rem">Edit Profile</h1>
+            </div>
+        </main>
+    </div>
+{% endblock title %}
+
+
+{% block content %}
+<div class="mb-4">
+    <form action="" method="post" style="margin-left: 1.5rem">
+        {% csrf_token %}
+        <table>
+            {{ form.as_table }}
+        </table>
+        <input type="submit" value="Submit">
+    </form> 
+</div>
+{% endblock content %}

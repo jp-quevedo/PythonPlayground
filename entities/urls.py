@@ -1,5 +1,5 @@
 from django.contrib.auth.views import LogoutView
-from django.urls import path
+from django.urls import path, reverse_lazy
 
 from .views import *
 
@@ -40,4 +40,11 @@ urlpatterns = [
     path('logout', LogoutView.as_view(template_name='entities/logout.html'), name='logout'),
     path('signup', signupRequest, name='signup'),
 
+    # Profile editing
+
+    path('profile', editProfile, name='profile'),
+    path('<int:pk>/password/', NewPassword.as_view(), name='new_password'),
+    path('add_avatar', addAvatar, name='add_avatar'),
+
+    
 ]
